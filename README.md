@@ -16,6 +16,8 @@ Scope of the project
 Initially, the back-end ETL operations of HiGeorge used to be done manually. This project was executed in order to automate 
 such processes.
 
+![ETL-Processes](/images/ETL-Processes.png "ETL Processes")
+
 
 Architecture
 ---
