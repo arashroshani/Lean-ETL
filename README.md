@@ -16,11 +16,16 @@ Scope of the project
 Initially, the back-end ETL operations of HiGeorge used to be done manually. This project was executed in order to automate 
 such processes.
 
+ETL means the extract, transform, and load of data end-to-end. HiGeorge keeps the data about campaigns, expenditures, canvases and so on on a Mongo DataBase. We want to first look at the campaigns in the HiGeorge Mongo DataBase and for those campaigns that are active we want to extract Facebook ad insights which contain parameters like conversion, reach, and amount spent. Then from the extracted insight we want to create aggregated stats and visualizations. Afterwards, the visualizations need to be loaded on Google Cloud Storage and based on the aggregated stats the expenditures need to get updated. Lastly we need to update all the other canvases with the updated expenditures to provide users with statistics about how much of their funds have been spent and how far their contributions go. These steps have been shown in the fallowing diagram:
+
 ![ETL-Processes](/images/ETL-Processes.png "ETL Processes")
 
 
 Architecture
 ---
+The pipelines that automate the ETL processes look like this:
+
+![Architecture](/images/Architecture.png "Architecture")
 
 Disclaimer
 ---
