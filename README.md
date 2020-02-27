@@ -1,13 +1,13 @@
 Lean ETL
 =======
-This project was merged in with the [HiGeorge](https://hi-george.com/) back-end production in Februrary 2020.  
+This project was merged in with the [HiGeorge](https://hi-george.com/) back-end production in February 2020.  
 The [presentation](https://docs.google.com/presentation/d/1mK1OKe9bXOSkPA-jcyNH0rwXlT49Bf4ys_a_pqeL9ls/edit#slide=id.g6eebf444bf_1_0)
 slides are available for public view.
 
 About HiGeorge
 ---
 HiGeorge is a pre-seed startup that provides a crowd-funding platform for civic activism. They run different campaigns on their platform targeting different civic issues and the public can contribute to and fund these campaigns.
-HiGeorge then utilizes the funds to run advertisements on social media such as Facebook to reach out to a wide audiance 
+HiGeorge then utilizes the funds to run advertisements on social media such as Facebook to reach out to a wide audience 
 in a call for action. Afterwards, the users' profiles get updated with the impact that the contribution of each user has made.
 
 Scope of the project
@@ -32,7 +32,7 @@ The use of MongoDB in this project can be questioned as it is not the fastest po
 
 Possible future bottleneck
 ---
-The writes to the MongoDB are tangibly slower than the reads from it. Therefore, the part of the pipeline that is used for the writes from the script to the MongoDB can become the bottleneck of the pipelines when the data throughput and the number of writes increase. A quick fixture for the mentioned bottleneck would be a queue between the script and the MongoDB for the writes.
+The writes to the MongoDB are tangibly slower than the reads from it. Therefore, the part of the pipeline that is used for the writes from the script to the MongoDB can become the bottleneck of the pipelines when the data throughput and the number of writes increase. A quick fixture for the mentioned blockage would be a queue between the script and the MongoDB for the writes.
 
 ![Quick_Fix](/images/HiGeorge-future-Architecture.png "Quick Fix")
 
@@ -40,10 +40,10 @@ Directory description
 ---
 This repository contains the following
 
-- `GScommunication.py` provides a function that can be used to dump files on the Google Cloud Storage and it returns the URL to the dumped files accordingly.  
-- `visualization.py` provides an object that creates visualizations.  
+- `GScommunication.py` provides a function for dumping files on the Google Cloud Storage which returns the URL to the dumped files accordingly.  
+- `visualization.py` provides an object for creating visualizations.  
 - `update_map_and_expenditure.py` does the ETL operations. `update_map_and_expenditure.py` imports other modules including `GScommunication.py` and `visualization.py`.  
-- `dags/` contains the dag that Airflow uses to trigger the `update_map_and_expenditure.py` script automatically on specific time intervals.
+- `dags/` contains the dag file that Airflow uses to trigger the `update_map_and_expenditure.py` script automatically on specific time intervals.
 
 
 Disclaimer
